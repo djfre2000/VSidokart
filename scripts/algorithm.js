@@ -13,7 +13,7 @@ setInterval(function(){
 
         //salesGauge.setValue(data.value);
     }, dataType: "json"});
-}, 10000);
+}, 1000);
 
 
 // ROBOT
@@ -73,6 +73,7 @@ function onloadHandler()
 	//ROBOT
     robotMarker = new google.maps.Marker({
 		position: robotLatlng, 
+		icon: 'robot1.png',
 		map: map
 	});
 
@@ -150,7 +151,7 @@ function timer()
 
 	var icon = Math.round(angle / 15) * -15;
 	icon = (icon <= -360 ? 0 : icon);
-	document.getElementById("car").childNodes[0].style.top = icon + "px";
+	//document.getElementById("car").childNodes[0].style.top = icon + "px";
 
 	var km = Math.round(velocity * 8200000) + "km/h";
 	var elm = document.getElementById("speed_meter");
@@ -179,8 +180,8 @@ function timer()
 	checkpoints = 3;
 	}	
 	
-    // fourth checkpoint
-	if (((map_y - 35.662754) < -0.00018 ) &&  ((map_x - 139.731054) >  -0.00028) && (checkpoints == 3))
+    // fourth checkpoint    // -0.00018
+	if (((map_y - 35.662754) < -0.00010 ) &&  ((map_x - 139.731054) >  -0.00028) && (checkpoints == 3))
 	 {  
 	//alert('Checkpoint 4! -> '+(map_x - 139.731054));
 	checkpoints = 4;
@@ -199,12 +200,11 @@ function timer()
 	//reset();	
 }
 
-/*
 function calc(){
-  //alert('Position! -> '+(map_y - 35.664297));
-  alert('checkpoints: '+checkpoints);  
+  alert('Position! -> '+(map_y - 35.662754));
+  //alert('checkpoints: '+checkpoints);  
 }
-*/
+
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////// ROBOT
@@ -232,6 +232,7 @@ function createMarker(latlng, label, html) {
         position: latlng,
         map: map,
         title: label,
+		icon: 'robot2.png',
         zIndex: Math.round(latlng.lat()*-100000)<<5
         });
         marker.myname = label;
@@ -451,7 +452,7 @@ function goal(){
     winner_name = 'Robot';}
   
   status = 'Finished';
-  alert('Goal! '+winner_name+' wins!');
+  //alert('Goal! '+winner_name+' wins!');
   play_bomb();
 
 }

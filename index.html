@@ -12,7 +12,7 @@
 <style>
 #game_window{position: relative; width: 900px; height:900px; float: left;}
 #speed_meter{position: absolute; background-color: #fff; border: 1px solid black; width: 4.5em; text-align: right; left: 5px; top: 5px; color: #f90; font-weight: bold; z-index: 99;}
-#car{position:absolute; left:436px; top:436px; width: 15px; height: 15px; z-index:99; overflow: hidden}
+#car{position:absolute; left:418px; top:418px; width: 63px; z-index:99; overflow: hidden}
 #car img{position: relative;}
 #map{width:900px; height:900px; position:relative; left:0; top:0;}
 .hidden { display: none; }
@@ -31,14 +31,14 @@ th{background-color: yellow;}
 <img id="intro_img" src="start_splash.jpg">
 <div id="game_window">
 <div id="speed_meter"></div>
-<div id="car"><img src="car.gif"></div>
+<div id="car"><img src="yoshida2.png"></div>
 <div id="map"></div>
 </div>
 
 <div id="game_window">
   <input type="submit" value="Reset Race" onclick="reset();">
   <input type="submit" value="Start Race" onclick="start();">	
-  <!--input type="submit" value="Calculate" onclick="calc();"-->  
+  <input type="submit" value="Calculate" onclick="calc();">  
   <div id="directions_panel" style="margin:20px;background-color:#FFEE77;"></div>
   <audio id="backgroundmusic" src="sounds/Formula_1_sound.mp3" preload="auto"></audio>
   <audio id="intro_music" src="sounds/start_spash.wav" preload="auto"></audio>
